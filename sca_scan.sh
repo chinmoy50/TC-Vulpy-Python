@@ -7,7 +7,7 @@ TEMP_DIR=$(mktemp -d)
 # Copy current directory contents to a subdirectory in the temp directory
 cp -R . "$TEMP_DIR/$CURRENT_DIR"
 # Create ZIP file for SCA Scan
-(cd "$TEMP_DIR" && zip -r "../$CURRENT_DIR.zip" "$CURRENT_DIR" -x '*.git*')
+(cd "$TEMP_DIR" && "C:\Program Files\7-Zip\7z.exe" a -r "../$CURRENT_DIR.zip" "$CURRENT_DIR" -x!*.git*)
 # Move the ZIP file to the current directory
 mv "$TEMP_DIR/../$CURRENT_DIR.zip" .
 # Clean up the temporary directory
