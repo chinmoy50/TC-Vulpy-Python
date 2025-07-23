@@ -27,7 +27,7 @@ RESPONSE=$(curl -X POST \
   -F "language=python" \
   https://appsecops-api.intruceptlabs.com/api/v1/integrations/sca-scans)
 # Use Python to parse and display JSON
-python3 - <<EOF
+python - <<EOF
 import json
 import sys
 def print_table(data):
