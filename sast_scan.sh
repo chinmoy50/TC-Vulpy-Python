@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 # Create ZIP file for SAST Scan
-zip -r project.zip . -x '*.git*'
+#zip -r project.zip . -x '*.git*'
+7z a -r project.zip * -x!*.git*
 # Perform SAST Scan
 RESPONSE=$(curl -X POST \
   -H "Client-ID: 23e4567-e89b-12d3-a456-426614174001" \
